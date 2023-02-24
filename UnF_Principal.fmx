@@ -61,4 +61,15 @@ object Principal: TPrincipal
     Viewport.Width = 318.000000000000000000
     Viewport.Height = 69.000000000000000000
   end
+  object conn: TFDConnection
+    Params.Strings = (
+      'DriverID=SQLite')
+    Left = 296
+    Top = 80
+  end
+  object qry: TFDQuery
+    Connection = conn
+    Left = 296
+    Top = 152
+  end
 end
