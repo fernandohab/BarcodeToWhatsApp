@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2021/12/13 05:26:20.000.024,=D:\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2021/12/13 05:29:23.000.145,D:\Documentos\Embarcadero\Studio\Projects\UnF_Inicial.pas=D:\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2021/12/13 05:29:23.000.145,D:\Documentos\Embarcadero\Studio\Projects\UnF_Inicial.fmx=D:\Documentos\Embarcadero\Studio\Projects\Unit1.fmx</Transaction>
+    <Transaction>2021/12/13 05:29:43.000.849,D:\Documentos\Embarcadero\Studio\Projects\UnF_Principal.fmx=D:\Documentos\Embarcadero\Studio\Projects\UnF_Inicial.fmx</Transaction>
+    <Transaction>2021/12/13 05:29:43.000.849,D:\Documentos\Embarcadero\Studio\Projects\UnF_Principal.pas=D:\Documentos\Embarcadero\Studio\Projects\UnF_Inicial.pas</Transaction>
+    <Transaction>2021/12/13 05:39:36.000.405,C:\Desenvolvimento\Pessoal\ProductBip\UnF_Principal.pas=D:\Documentos\Embarcadero\Studio\Projects\UnF_Principal.pas</Transaction>
+    <Transaction>2021/12/13 05:39:36.000.405,C:\Desenvolvimento\Pessoal\ProductBip\UnF_Principal.fmx=D:\Documentos\Embarcadero\Studio\Projects\UnF_Principal.fmx</Transaction>
+    <Transaction>2021/12/13 05:39:58.000.429,C:\Desenvolvimento\Pessoal\ProductBip\BarcodeScan.dproj=D:\Documentos\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2021/12/13 06:40:01.000.084,=C:\Desenvolvimento\Pessoal\ProductBip\Un_AndroidPermissions.pas</Transaction>
+    <Transaction>2021/12/13 06:46:54.000.509,C:\Desenvolvimento\Pessoal\ProductBip\BarcodeScan.dproj=C:\Desenvolvimento\Pessoal\ProductBip\BarcodeScanner.dproj</Transaction>
+    <Transaction>2021/12/13 07:06:09.000.251,C:\Desenvolvimento\Pessoal\ProductBip\Un_AndroidPermissions.pas=</Transaction>
+  </Transactions>
+	<ActiveMobileDevice>
+		<NoProfile Android="9f7f94e" Android64=""/>
+	</ActiveMobileDevice>
+</BorlandProject>

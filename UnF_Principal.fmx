@@ -1,0 +1,64 @@
+object Principal: TPrincipal
+  Left = 0
+  Top = 0
+  Caption = 'Principal'
+  ClientHeight = 744
+  ClientWidth = 362
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object Iniciar: TButton
+    Align = Bottom
+    Margins.Left = 60.000000000000000000
+    Margins.Top = 20.000000000000000000
+    Margins.Right = 60.000000000000000000
+    Margins.Bottom = 40.000000000000000000
+    Position.X = 60.000000000000000000
+    Position.Y = 661.000000000000000000
+    Size.Width = 242.000000000000000000
+    Size.Height = 43.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    Text = 'Iniciar'
+    OnClick = IniciarClick
+  end
+  object imgCam: TImage
+    MultiResBitmap = <
+      item
+      end>
+    Align = Top
+    MarginWrapMode = Fit
+    Margins.Left = 20.000000000000000000
+    Margins.Top = 35.000000000000000000
+    Margins.Right = 20.000000000000000000
+    Margins.Bottom = 40.000000000000000000
+    Position.X = 20.000000000000000000
+    Position.Y = 35.000000000000000000
+    Size.Width = 322.000000000000000000
+    Size.Height = 486.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object CamComponent: TCameraComponent
+    OnSampleBufferReady = CamComponentSampleBufferReady
+    Left = 320
+  end
+  object LabelFPS: TLabel
+    Position.X = 8.000000000000000000
+    Position.Y = 8.000000000000000000
+    TabOrder = 4
+  end
+  object Memo1: TMemo
+    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+    DataDetectorTypes = []
+    Position.X = 20.000000000000000000
+    Position.Y = 552.000000000000000000
+    Size.Width = 322.000000000000000000
+    Size.Height = 73.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 5
+    Viewport.Width = 318.000000000000000000
+    Viewport.Height = 69.000000000000000000
+  end
+end
