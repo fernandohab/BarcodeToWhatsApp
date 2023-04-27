@@ -9,6 +9,8 @@ uses
   FMX.MediaLibrary.Actions, System.Actions, FMX.ActnList, FMX.StdActns,
   // ZXing
   ZXing.ScanManager, ZXing.ReadResult, ZXing.BarcodeFormat, FMX.Platform, ZXing.ResultPoint,
+  // Android
+  Androidapi.Jni.Net, Androidapi.Jni, Androidapi.JNIBridge, Androidapi.Helpers, FMX.Helpers.Android, Androidapi.Jni.GraphicsContentViewText
   // System
   System.Math.Vectors, FMX.Layouts,  System.Generics.Defaults, System.Generics.Collections,
   System.Diagnostics, System.Threading, System.Math, System.IOUtils, FMX.ListBox, FMX.ExtCtrls,
@@ -56,7 +58,6 @@ type
 var
   Principal : TPrincipal;
 
-
 implementation
 
 {$R *.fmx}
@@ -84,25 +85,31 @@ end;
 
 procedure TPrincipal.ImageStream;
 var
+  WhatsApp : JIntent;
   bmp : TBitmap;
   ReadResult : TReadResult;
 begin
-  CamComponent.SampleBufferToBitmap(imgCam.Bitmap, true);
+  CamComponent.SampleBufferToBitmap(imgCam.Bitmap, true);					// Realiza a bipagem
   try
     // Memo1.Lines.Add('Init');
     bmp := TBitmap.Create;
     bmp.Assign(imgCam.Bitmap);
-    ReadResult := FScanManager.Scan(bmp);
-    if ReadResult <> nil then
+    ReadResult := FScanManager.Scan(bmp);							
+    if ReadResult <> nil then									// Ao encontrar um código de barras válido
       begin
        // CamComponent.Active := false;
-          Memo1.Lines.Add(ReadResult.text);
+          Memo1.Lines.Add(ReadResult.text);							// Mostra o código em um memo na tela
           Close;
+	  WhatsApp := TJIntent.JavaClass.init(TJintent.JavaClass.ACTION_SEND);			
+          WhatsApp.setType(StringToJString(‘text/plain’));
+          WhatsApp.putExtra(TJIntent.JavaClass.EXTRA_TEXT, StringToJString(DateTimetoStr(Now) +
+	  ' ' + ReadResult.text));  // DataHora + BarCode
+          WhatsApp.setPackage(StringToJString(‘com.whatsapp’));
+	  SharedActivityContext.startActivity(WhatsApp);					// Chama o envio para o WhatsApp
       end;
   finally
     bmp.Free;
   end;
-
 end;
 
 procedure TPrincipal.IniciarClick(Sender: TObject);
@@ -114,8 +121,5 @@ begin
   imgCam.Enabled := True;
   CamComponent.Active := True;
 end;
-
-
-
 
 end.
