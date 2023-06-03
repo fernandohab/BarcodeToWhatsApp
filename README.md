@@ -1,4 +1,4 @@
-# ProductBip_App
+# BipProducts_App
 
 Bipagem de códigos de barras e envio para o WhatsApp.
 
