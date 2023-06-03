@@ -1,6 +1,6 @@
 # ProductBip_App
 
-Aplicativo para Bipagem de códigos de barras e envio para o WhatsApp.
+Bipagem de códigos de barras e envio para o WhatsApp.
 
 Desenvolvido em Delphi 10.4 para Android 11.
 
