@@ -1,6 +1,6 @@
-# BipProducts_App
+# BarcodeToWhatsApp
 
-Bipagem de códigos de barras e envio para o WhatsApp.
+It reads barcodes/QR codes and then calls WhatsApp to share with a desired contact or group.
 
 Desenvolvido em Delphi 10.4 para Android 11.
 
