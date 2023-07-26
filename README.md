@@ -1,8 +1,7 @@
 # BarcodeToWhatsApp
 
-It reads barcodes/QR codes and then calls WhatsApp to share with a desired contact or group.
+It reads a barcode/QR code then calls WhatsApp for sharing.
 
-Desenvolvido em Delphi 10.4 para Android 11.
-
+Developed in Delphi 10.4 for Android 11.
 
 Library: https://github.com/Spelt/ZXing.Delphi - Apache 2.0 license
