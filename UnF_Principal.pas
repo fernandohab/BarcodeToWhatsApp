@@ -81,9 +81,9 @@ end;
 
 procedure TPrincipal.ImgStream;
 var
-  WhatsApp : JIntent;
-  bmp : TBitmap;
-  ReadResult : TReadResult;
+  WhatsApp: JIntent;
+  bmp: TBitmap;
+  ReadResult: TReadResult;
 begin
   CamComponent.SampleBufferToBitmap(imgCam.Bitmap, true);					// Realiza a bipagem
   try
@@ -93,14 +93,14 @@ begin
     ReadResult := FScanManager.Scan(bmp);							
     if ReadResult <> nil then									// Ao encontrar um código de barras válido
       begin
-       // CamComponent.Active := false;
+       // CamComponent.Active := False;
           Memo1.Lines.Add(ReadResult.text);							// Mostra o código em um memo na tela
           Close;
 	  WhatsApp := TJIntent.JavaClass.init(TJintent.JavaClass.ACTION_SEND);			
-          WhatsApp.setType(StringToJString(‘text/plain’));
+          WhatsApp.setType(StringToJString('text/plain'));
           WhatsApp.putExtra(TJIntent.JavaClass.EXTRA_TEXT, StringToJString(DateTimetoStr(Now) +
-	  ' ' + ReadResult.text));  								// DataHora + Barcode
-          WhatsApp.setPackage(StringToJString(‘com.whatsapp’));
+	  ' - ' + ReadResult.text));  								// DataHora + Barcode
+          WhatsApp.setPackage(StringToJString('com.whatsapp'));
 	  SharedActivityContext.startActivity(WhatsApp);					// Chama o envio para o WhatsApp
       end;
   finally
