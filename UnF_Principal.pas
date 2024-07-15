@@ -33,24 +33,21 @@ type
     procedure FormCreate(Sender: TObject);
     procedure IniciarClick(Sender: TObject);
     procedure CamComponentSampleBufferReady(Sender: TObject; const ATime: TMediaTime);
-    procedure ImageStream;
-
-
-
+    procedure ImgStream;
   private
     { Private declarations }
     FScanManager : TScanManager;
     FReadResult : string;
     FPermissionCamera, FPermissionReadExternalStorage, FPermissionWriteExternalStorage: string;
-		FScanInProgress: Boolean;
-		FFrameTake: Integer;
-		FStopwatch: TStopwatch;
-		FFrameCount: Integer;
-		FCaptureSettings: TArray<TVideoCaptureSetting>;
-		targetRect: TRect;
-		FActive: Boolean;
-		FBuffer: TBitmap;
-		FScanBitmap: TBitmap;
+    FScanInProgress: Boolean;
+    FFrameTake: Integer;
+    FStopwatch: TStopwatch;
+    FFrameCount: Integer;
+    FCaptureSettings: TArray<TVideoCaptureSetting>;
+    targetRect: TRect;
+    FActive: Boolean;
+    FBuffer: TBitmap;
+    FScanBitmap: TBitmap;
   public
     //
   end;
@@ -59,7 +56,6 @@ var
   Principal : TPrincipal;
 
 implementation
-
 {$R *.fmx}
 
 uses
@@ -73,7 +69,7 @@ uses
 procedure TPrincipal.CamComponentSampleBufferReady(Sender: TObject;
   const ATime: TMediaTime);
 begin
-  ImageStream;
+  ImgStream;
 end;
 
 procedure TPrincipal.FormCreate(Sender: TObject);
@@ -83,7 +79,7 @@ begin
   {$ENDIF}
 end;
 
-procedure TPrincipal.ImageStream;
+procedure TPrincipal.ImgStream;
 var
   WhatsApp : JIntent;
   bmp : TBitmap;
@@ -103,7 +99,7 @@ begin
 	  WhatsApp := TJIntent.JavaClass.init(TJintent.JavaClass.ACTION_SEND);			
           WhatsApp.setType(StringToJString(‘text/plain’));
           WhatsApp.putExtra(TJIntent.JavaClass.EXTRA_TEXT, StringToJString(DateTimetoStr(Now) +
-	  ' ' + ReadResult.text));  // DataHora + BarCode
+	  ' ' + ReadResult.text));  								// DataHora + Barcode
           WhatsApp.setPackage(StringToJString(‘com.whatsapp’));
 	  SharedActivityContext.startActivity(WhatsApp);					// Chama o envio para o WhatsApp
       end;
